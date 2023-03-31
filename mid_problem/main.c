@@ -67,6 +67,9 @@ void main () {
 */
 
 /*
+Enter the number of terms: 10
+Fibonacci Series: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 
+
 void main() {
   int i, n, t_1 = 0, t_2 = 1, nextTurn = 0;
 
@@ -76,8 +79,6 @@ void main() {
   scanf("%d", &n);
 
   printf("Fibonacci Series %d, %d, ", t_1, t_2);
-
-
   for(i = 3 ; i <= n ; ++i){
     printf("%d, ", nextTurn);
     t_1 = t_2;
@@ -88,6 +89,12 @@ void main() {
 */
 
 /*
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+
 void main() {
     int i, j, rows;
    printf("Enter the number of rows: ");
@@ -102,7 +109,15 @@ void main() {
 */
 
 
+// reverse pattern
 /*
+
+1 2 3 4 5
+1 2 3 4 
+1 2 3
+1 2
+1
+
 void main() {
     int i, j, rows;
    printf("Enter the number of rows: ");
@@ -115,6 +130,36 @@ void main() {
    }
 }
 */
+
+
+/*
+           1
+         1   1
+       1   2   1
+     1   3   3    1
+   1  4    6   4   1
+ 1  5   10   10  5   1
+
+#include <stdio.h>
+int main() {
+   int rows, coef = 1, space, i, j;
+   printf("Enter the number of rows: ");
+   scanf("%d", &rows);
+   for (i = 0; i < rows; i++) {
+      for (space = 1; space <= rows - i; space++)
+         printf("  ");
+      for (j = 0; j <= i; j++) {
+         if (j == 0 || i == 0)
+            coef = 1;
+         else
+            coef = coef * (i - j + 1) / j;
+         printf("%4d", coef);
+      }
+      printf("\n");
+   }
+   return 0;
+}
+*/ 
 
 
 /*
