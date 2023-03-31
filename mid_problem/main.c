@@ -133,6 +133,7 @@ void main() {
 
 
 /*
+pascal series
            1
          1   1
        1   2   1
@@ -163,6 +164,7 @@ int main() {
 
 
 /*
+far = (cal *  9 / 5) - 32;
 int main(){
     float fah, cels; // declaring
     printf("Enter temperature in Fahrenheit: ");
@@ -173,6 +175,7 @@ int main(){
 }
 */
 
+// 123 => 321
 int main(){
     int reverse = 0, num, n;
     printf("Enter an integer number \t:");
