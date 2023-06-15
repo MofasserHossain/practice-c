@@ -18,7 +18,7 @@ void printSubjectResult(Subject subjects[], int numSubjects);
 // get CGPA from marks
 float getCGPAFromMark(float mark);
 // get CGPA from marks
-int getMakFromCgpa(float cgpa);
+int getMakFromCGPA(float cgpa);
 // store data
 void storeDataFromUser(Subject subjects[], int numSubjects, float *nextSemesterCredit, int process);
 // store data
@@ -100,16 +100,16 @@ int main() {
 
 void processTwo(float targetCreditPoint, float totalCreditInNextSemester, float previousCreditPoint, float completedCredit, float currentCGPA, float expectedCGPA){
     // check predicted CGPA
-    float predictedCgpa = targetCreditPoint / totalCreditInNextSemester;
+    float predictedCGPA = targetCreditPoint / totalCreditInNextSemester;
 
     printf("\n\n\n----- CGPA Analysis and Prediction Result -----\n\n\n");
     printf("Current CGPA: %.2f\n", currentCGPA);
     printf("Expected CGPA: %.2f\n\n\n", expectedCGPA);
 
-    if (predictedCgpa <= 4){
+    if (predictedCGPA <= 4){
         printf("You are on track to achieve your expected CGPA.\n");
-        int marks = getMakFromCgpa(predictedCgpa);
-        printf("But you have to get average CGPA: %.2f or %d%% above marks in each subject\n", predictedCgpa, marks);
+        int marks = getMakFromCGPA(predictedCGPA);
+        printf("But you have to get average CGPA: %.2f or %d%% above marks in each subject\n", predictedCGPA, marks);
     } else {
         float finalCPGA = ((totalCreditInNextSemester * 4) + previousCreditPoint) / completedCredit;
         printf("Sorry! Your expected CGPA is too high. You can't achieve it.\nBut if you get 80%% marks in each subject,\nYou can achieve Maximum CGPA: %.2f\n", finalCPGA);
@@ -118,19 +118,19 @@ void processTwo(float targetCreditPoint, float totalCreditInNextSemester, float 
 
 
 void processOne(Subject nextSemesterSubjects[], int numNextSemesterSubjects, float previousCreditPoint, float completedCredit, float currentCGPA, float expectedCGPA, float expectedCreditPoint) {
-    float achieveCgpaPoin;
+    float achieveCGPAPoint;
     float predictedCGPA;
-    calculateTPoint(nextSemesterSubjects, numNextSemesterSubjects, &achieveCgpaPoin);
+    calculateTPoint(nextSemesterSubjects, numNextSemesterSubjects, &achieveCGPAPoint);
 
-    printf("\n achieve CGPA Point %f", achieveCgpaPoin);
-    float achieveCgpa = calculateCgpa(achieveCgpaPoin, previousCreditPoint, completedCredit);
+    printf("\n achieve CGPA Point %f", achieveCGPAPoint);
+    float achieveCGPA = calculateCgpa(achieveCGPAPoint, previousCreditPoint, completedCredit);
 
     printf("\n\n\n----- CGPA Analysis and Prediction Result -----\n\n\n");
     printf("Current CGPA: %.2f\n", currentCGPA);
     printf("Expected CGPA: %.2f\n", expectedCGPA);
-    printf("Achieved CGPA: %.2f\n\n", achieveCgpa);
+    printf("Achieved CGPA: %.2f\n\n", achieveCGPA);
 
-    if (achieveCgpaPoin >= expectedCreditPoint) {
+    if (achieveCGPAPoint >= expectedCreditPoint) {
         printf("Congratulations! You are on track to achieve your expected CGPA.\n\n");
     } else {
         printf("You need to work harder to achieve your expected CGPA.\n\n");
@@ -235,7 +235,7 @@ float getCGPAFromMark (float mark){
     return result;
 }
 
-int getMakFromCgpa (float cgpa){
+int getMakFromCGPA (float cgpa){
     float mark = 0;
       if(cgpa >= 4){
         mark = 80;
