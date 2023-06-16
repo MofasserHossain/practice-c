@@ -21,8 +21,6 @@ float getCGPAFromMark(float mark);
 int getMakFromCGPA(float cgpa);
 // store data
 void storeDataFromUser(Subject subjects[], int numSubjects, float *nextSemesterCredit, int process);
-// store data
-void storeDataFromUserTwo(Subject subjects[], int numSubjects, float *nextSemesterCredit);
 // process one
 void processOne(Subject nextSemesterSubjects[], int numNextSemesterSubjects, float previousCreditPoint, float completedCredit, float currentCGPA, float expectedCGPA, float expectedCreditPoint);
 // process two
