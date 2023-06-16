@@ -67,8 +67,16 @@ int main() {
     printf("\n\nEnter 1 to get predicted CGPA by your self: \n");
     printf("Enter 2 to get predicted CGPA by system: \n\n");
 
-    printf("Enter \t:");
-    scanf("%d", &process);
+    printf("Enter the process you want to continue: \t");
+    int valid = 0;
+    while (!valid){
+      /* code */
+      scanf("%d", &process);
+      if(process == 1 || process == 2)
+        valid = 1;
+      else
+        printf("\nPlease enter a valid process number(1 or 2): \t");
+    }
 
     float totalCreditInNextSemester = 0.00;
     // get each subject data from user
@@ -91,8 +99,10 @@ int main() {
             processTwo(targetCreditPoint, totalCreditInNextSemester, previousCreditPoint, completedCredit, currentCGPA, expectedCGPA);
             break;
         default:
-            printf("Nothing");
+            processTwo(targetCreditPoint, totalCreditInNextSemester, previousCreditPoint, completedCredit, currentCGPA, expectedCGPA);
+            break;
     }
+    printf("\n\n\n");
 
     return 0;
 }
@@ -107,9 +117,9 @@ void processTwo(float targetCreditPoint, float totalCreditInNextSemester, float 
     printf("Expected CGPA: %.2f\n\n\n", expectedCGPA);
 
     if (predictedCGPA <= 4){
-        printf("You are on track to achieve your expected CGPA.\n");
+        printf("To achieve your expected CGPA,\n");
         int marks = getMakFromCGPA(predictedCGPA);
-        printf("But you have to get average CGPA: %.2f or %d%% above marks in each subject\n", predictedCGPA, marks);
+        printf("you have to get average CGPA: %.2f or %d%% above marks in each subject\n", predictedCGPA, marks);
     } else {
         float finalCPGA = ((totalCreditInNextSemester * 4) + previousCreditPoint) / completedCredit;
         printf("Sorry! Your expected CGPA is too high. You can't achieve it.\nBut if you get 80%% marks in each subject,\nYou can achieve Maximum CGPA: %.2f\n", finalCPGA);
@@ -122,7 +132,7 @@ void processOne(Subject nextSemesterSubjects[], int numNextSemesterSubjects, flo
     float predictedCGPA;
     calculateTPoint(nextSemesterSubjects, numNextSemesterSubjects, &achieveCGPAPoint);
 
-    printf("\n achieve CGPA Point %f", achieveCGPAPoint);
+    // printf("\n achieve CGPA Point %f", achieveCGPAPoint);
     float achieveCGPA = calculateCgpa(achieveCGPAPoint, previousCreditPoint, completedCredit);
 
     printf("\n\n\n----- CGPA Analysis and Prediction Result -----\n\n\n");
@@ -163,7 +173,6 @@ void printSubjectResult(Subject subjects[], int numSubjects){
     for (int i = 0; i < numSubjects; i++) {
        printf("%-25s%-20.2f%-10d%-10.2f\n", subjects[i].name, subjects[i].credit, subjects[i].marks, subjects[i].cgpa);
     }
-    printf("\n\n\n");
 }
 
 void storeDataFromUser(Subject subjects[], int numSubjects ,float *nextSemesterCredit,int process){
