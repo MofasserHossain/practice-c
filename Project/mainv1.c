@@ -158,11 +158,12 @@ float calculateCgpa(float achievePoint, float prevAchievePoint, float totalCompl
 
 
 void printSubjectResult(Subject subjects[], int numSubjects){
-    printf("You output in each subject \n \n");
+    printf("Your output in each subject \n \n");
     printf("%-25s%-20s%-10s%-10s\n", "Subject Name", "Credit", "Marks", "CGPA");
     for (int i = 0; i < numSubjects; i++) {
        printf("%-25s%-20.2f%-10d%-10.2f\n", subjects[i].name, subjects[i].credit, subjects[i].marks, subjects[i].cgpa);
     }
+    printf("\n\n\n");
 }
 
 void storeDataFromUser(Subject subjects[], int numSubjects ,float *nextSemesterCredit,int process){
