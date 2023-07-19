@@ -36,6 +36,8 @@ int main() {
         printf("\n");
     }
 
+    
+
     // Step 5: Display the sum of the diagonal elements
     printf("\nSum of Diagonal Elements: %d\n", sumDiagonal);
 

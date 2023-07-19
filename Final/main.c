@@ -1,33 +1,58 @@
-// how to find 2nd and 3rd largest number in an array
+// #include <stdio.h>
+// int main() {
+//    int i, space, rows, k = 0;
+//    printf("Enter the number of rows: ");
+//    scanf("%d", &rows);
+//    for (i = 1; i <= rows; ++i, k = 0) {
+//       for (space = 1; space <= rows - i; ++space) {
+//          printf("  ");
+//       }
+//       while (k != (2 * i - 1)) {
+//          printf("* ");
+//          ++k;
+//       }
+//       printf("\n");
+//    }
+//    return 0;
+// }
 
+
+// 5
+// 44
+// 333
+// 2222
+// 1111111
+
+// draw a patern like this by using nested loop
 #include <stdio.h>
-
-int main()
-{
-   int arr[100], n, i, j, temp;
-   printf("Enter number of elements in the array: ");
-   scanf("%d", &n);
-   printf("Enter %d elements\n", n);
-   for (i = 0; i < n; i++)
-   {
-      scanf("%d", &arr[i]);
-   }
-   for (i = 0; i < n - 1; i++)
-   {
-      for (j = 0; j < (n - i - 1); j++)
-      {
-         if (arr[j] > arr[j + 1])
-         {
-            temp = arr[j];
-            arr[j] = arr[j + 1];
-            arr[j + 1] = temp;
+int main() {
+      int i, j, rows;
+      printf("Enter the number of rows: ");
+      scanf("%d", &rows);
+      for (i = rows; i >= 1; --i) {
+         for (j = 1; j <= i; ++j) {
+               printf("%d", i);
          }
+         printf("\n");
       }
+      return 0;
    }
-   printf("Array after bubble sort:\n");
-   for (i = 0; i < n; i++)
-   {
-      printf("%d ", arr[i]);
-   }
-   return 0;
-}
+
+
+// #include <stdio.h>
+
+// int main() {
+//     int rows;
+
+//     printf("Enter the number of rows: ");
+//     scanf("%d", &rows);
+
+//     for (int i = 1; i <= rows; i++) {
+//         for (int j = 1; j <= i; j++) {
+//             printf("%d", );
+//         }
+//         printf("\n");
+//     }
+
+//     return 0;
+// }
