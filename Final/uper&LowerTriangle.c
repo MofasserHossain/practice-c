@@ -46,30 +46,5 @@ int main() {
         printf("\n");
     }
 
-    // Step 4: Extract and display the right bottom triangle
-    printf("\nRight Bottom Triangle:\n");
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            if (j >= cols - i - 1) {
-                printf("%d\t", matrix[i][j]);
-            } else {
-                printf("\t");
-            }
-        }
-        printf("\n");
-    }
-
-    printf("\nRight top Triangle:\n");
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            if (j <= cols - i - 1) {
-                printf("%d\t", matrix[i][j]);
-            } else {
-                printf("\t");
-            }
-        }
-        printf("\n");
-    }
-
     return 0;
 }
